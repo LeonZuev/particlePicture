@@ -1,0 +1,18 @@
+body {
+    background: grey;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#canvas1 {
+    background: rgb(52, 52, 110);
+    position: absolute;
+}
+
+.controls {
+    position: absolute;
+    z-index: 100;
+}
