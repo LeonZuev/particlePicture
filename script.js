@@ -5,6 +5,8 @@ window.addEventListener('load', function(){
     canvas.width = this.window.innerWidth;
     canvas.height = this.window.innerHeight;
 
+    const image1 = this.document.getElementById('image1')
+
     class Particle {
         constructor(){
             this.x = 0;
@@ -22,4 +24,5 @@ window.addEventListener('load', function(){
 
     }
     ctx.fillRect(120, 150, 100, 200)
+    ctx.drawImage(image1, 100, 100, 400, 300)
 });
