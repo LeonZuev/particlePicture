@@ -4,4 +4,16 @@ window.addEventListener('load', function(){
     // console.log(ctx);
     canvas.width = this.window.innerWidth;
     canvas.height = this.window.innerHeight;
+
+    class Particle {
+
+    }
+
+    class Effect {
+
+    }
+
+    function animate() {
+        
+    }
 });
