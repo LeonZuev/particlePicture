@@ -8,33 +8,33 @@ window.addEventListener('load', function () {
 
     class Particle {
         constructor() {
-            this.x = 200;
+            this.x = 50;
             this.y = 150;
             this.size = 100;
         }
-        draw() {
-            ctx.fillRect(this.x, this.y, this.size, this.size);
+        draw(context) {
+            context.fillRect(this.x, this.y, this.size, this.size);
         }
     }
 
     class Effect {
-        constructor(width, height){
+        constructor(width, height) {
             this.width = width;
             this.height = height;
             this.particlesArray = [];
         }
-        init(){
+        init() {
             this.particlesArray.push(new Particle());
         }
-        draw(){
-            this.particlesArray.forEach(particle => particle.draw());
+        draw(context) {
+            this.particlesArray.forEach(particle => particle.draw(context));
         }
 
     }
 
     const effect = new Effect(canvas.width, canvas.height)
     effect.init();
-    console.log(effect);
+    effect.draw(ctx);
 
     function animate() {
 
