@@ -8,8 +8,8 @@ window.addEventListener('load', function () {
 
     class Particle {
         constructor() {
-            this.x = 50;
-            this.y = 150;
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
             this.size = 100;
         }
         draw(context) {
@@ -20,10 +20,12 @@ window.addEventListener('load', function () {
     class Effect {
         constructor(width, height) {
             this.width = width;
-            this.height = height;
+            this.width = height;
             this.particlesArray = [];
         }
         init() {
+            this.particlesArray.push(new Particle());
+            this.particlesArray.push(new Particle());
             this.particlesArray.push(new Particle());
         }
         draw(context) {
