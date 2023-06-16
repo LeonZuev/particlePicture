@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
     class Particle {
         constructor() {
             this.x = 200;
-            this.y = 50;
+            this.y = 150;
             this.size = 100;
         }
         draw() {
@@ -18,10 +18,23 @@ window.addEventListener('load', function () {
     }
 
     class Effect {
+        constructor(width, height){
+            this.width = width;
+            this.height = height;
+            this.particlesArray = [];
+        }
+        init(){
+            this.particlesArray.push(new Particle());
+        }
+        draw(){
+            this.particlesArray.forEach(particle => particle.draw());
+        }
 
     }
-    const particle1 = new Particle();
-    particle1.draw();
+
+    const effect = new Effect(canvas.width, canvas.height)
+    effect.init();
+    console.log(effect);
 
     function animate() {
 
