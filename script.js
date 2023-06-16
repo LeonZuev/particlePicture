@@ -6,6 +6,11 @@ window.addEventListener('load', function(){
     canvas.height = this.window.innerHeight;
 
     class Particle {
+        constructor(){
+            this.x = 0;
+            this.y = 0;
+            this.size = 3;
+        }
 
     }
 
@@ -14,6 +19,7 @@ window.addEventListener('load', function(){
     }
 
     function animate() {
-        
+
     }
+    ctx.fillRect(120, 150, 100, 200)
 });
