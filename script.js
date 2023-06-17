@@ -9,10 +9,17 @@ window.addEventListener('load', function () {
       this.effect = effect;
       this.x = Math.random() * this.effect.width;
       this.y = Math.random() * this.effect.height;
-      this.size = Math.random() * 50;
+      this.size = 10;
+      this.velocityX = 1;
+      this.velocityY = 1;
+
     }
     draw(context) {
       context.fillRect(this.x, this.y, this.size, this.size);
+    }
+    update(){
+      this.x += this.velocityX;
+      this.y += this.velocityY;
     }
   }
 
@@ -36,11 +43,15 @@ window.addEventListener('load', function () {
       this.particlesArray.forEach(particle => particle.draw(context));
       context.drawImage(this.image, this.x, this.y);
     }
+    update(){
+      this.particlesArray.forEach(particle => particle.update());
+    }
   }
 
   const effect = new Effect(canvas.width, canvas.height);
   effect.init();
   effect.draw(ctx);
+  effect.update();
 
   function animate() {
 
