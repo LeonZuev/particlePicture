@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
-  const image1 = document.getElementById('image1')
+  const image1 = document.getElementById('image1');
 
   class Particle {
     constructor(effect) {
@@ -21,7 +21,7 @@ window.addEventListener('load', function () {
   class Effect {
     constructor(width, height) {
       this.width = width;
-      this.width = height;
+      this.height = height;
       this.particlesArray = [];
     }
     init() {
@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
 
   }
 
-  const effect = new Effect(canvas.width, canvas.height)
+  const effect = new Effect(canvas.width, canvas.height);
   effect.init();
   effect.draw(ctx);
 
