@@ -33,11 +33,16 @@ window.addEventListener('load', function () {
       this.centerY = this.height * 0.5;
       this.x = this.centerX - this.image.width * 0.5;
       this.y = this.centerY - this.image.height * 0.5;
+      this.gap = 5;
     }
     init(context) {
       context.drawImage(this.image, this.x, this.y);
-      const pixels = context.getImageData(0, 0, this.width, this.height);
-      console.log(pixels);
+      const pixels = context.getImageData(0, 0, this.width, this.height).data;
+      for (let y = 0; y < this.height; y += this.gap) {
+        for (let x = 0; x < this.width; x += this.gap) {
+          
+        }
+      }
     }
     draw(context) {
       this.particlesArray.forEach(particle => particle.draw(context));
