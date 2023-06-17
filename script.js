@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
       this.size = this.effect.gap;
       this.velocityX = 0;
       this.velocityY = 0;
-      this.ease = 0.05;
+      this.ease = 0.01;
 
     }
     draw(context) {
@@ -25,6 +25,11 @@ window.addEventListener('load', function () {
     update() {
       this.x += (this.originX - this.x) * this.ease;
       this.y += (this.originY - this.y) * this.ease;
+    }
+    warp() {
+      this.x = Math.random() * this.effect.width;
+      this.y = Math.random() * this.effect.height;
+      this.ease = 0.05;
     }
   }
 
@@ -64,6 +69,9 @@ window.addEventListener('load', function () {
     update() {
       this.particlesArray.forEach(particle => particle.update());
     }
+    warp() {
+      this.particlesArray.forEach(particle => particle.warp());
+    }
   }
 
   const effect = new Effect(canvas.width, canvas.height);
@@ -77,5 +85,11 @@ window.addEventListener('load', function () {
     requestAnimationFrame(animate);
   }
   animate();
+  
+  //warp button
+  const warpButton = document.getElementById('warpButton');
+  warpButton.addEventListener('click', function(){
+    effect.warp();
+  });
 
 });

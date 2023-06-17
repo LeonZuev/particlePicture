@@ -19,3 +19,18 @@ body {
 img {
     display: none;
 }
+
+button {
+    padding: 10px;
+    font-size: 40px;
+    margin: 20xp;
+    font-family: 'Bangers', cursive;
+    color: grey;
+    background-color: rgb(33, 33, 33);
+    transform: 0.2s;
+}
+
+button:hover {
+    color: rgb(33, 33, 33);
+    background-color: grey;
+}
