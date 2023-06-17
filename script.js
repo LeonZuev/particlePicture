@@ -52,6 +52,7 @@ window.addEventListener('load', function () {
   effect.init();
 
   function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     effect.draw(ctx);
     effect.update();
     requestAnimationFrame(animate);
