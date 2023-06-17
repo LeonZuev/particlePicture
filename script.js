@@ -16,6 +16,7 @@ window.addEventListener('load', function () {
       this.velocityX = 0;
       this.velocityY = 0;
       this.ease = 0.01;
+      this.friction = 0.95;
       this.distanceX = 0;
       this.distanceY = 0;
       this.distance = 0;
@@ -30,7 +31,7 @@ window.addEventListener('load', function () {
     update() {
       this.distanceX = this.effect.mouse.x - this.x;
       this.distanceY = this.effect.mouse.y - this.y;
-      this.distance = this.distanceX * this.distanceX + this.distanceY + this.distanceY;
+      this.distance = this.distanceX * this.distanceX + this.distanceY * this.distanceY;
       this.force = -this.effect.mouse.radius / this.distance;
 
       if (this.distance < this.effect.mouse.radius) {
@@ -39,8 +40,8 @@ window.addEventListener('load', function () {
         this.velocityY += this.force * Math.sin(this.angle);
       }
 
-      this.x += this.velocityX + (this.originX - this.x) * this.ease;
-      this.y += this.velocityY + (this.originY - this.y) * this.ease;
+      this.x += (this.velocityX * this.friction) + (this.originX - this.x) * this.ease;
+      this.y += (this.velocityY * this.friction) + (this.originY - this.y) * this.ease;
     }
     warp() {
       this.x = Math.random() * this.effect.width;
