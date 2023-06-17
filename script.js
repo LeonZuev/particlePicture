@@ -10,8 +10,8 @@ window.addEventListener('load', function () {
       this.x = Math.random() * this.effect.width;
       this.y = Math.random() * this.effect.height;
       this.size = 10;
-      this.velocityX = 1;
-      this.velocityY = 1;
+      this.velocityX = Math.random() * 2 - 1;
+      this.velocityY = Math.random() * 2 - 1;
 
     }
     draw(context) {
