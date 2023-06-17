@@ -18,7 +18,7 @@ Represents the overall particle effect on the canvas.
 It initializes the effect by loading an image onto the canvas and creating an array
 of particles based on the image's pixels. The effect continuously updates and draws
 the particles on the canvas, resulting in an animated particle effect.
-
+###
 The project provides interactivity through the mouse movement.
 As the user moves the mouse, the particles react to its position and create visual patterns.
 Additionally, there is a "warp" button that triggers a distortion effect by randomly repositioning the particles.
