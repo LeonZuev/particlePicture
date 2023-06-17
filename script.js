@@ -44,6 +44,16 @@ window.addEventListener('load', function () {
       this.x = this.centerX - this.image.width * 0.5;
       this.y = this.centerY - this.image.height * 0.5;
       this.gap = 3;
+      this.mouse = {
+        radius: 3000,
+        x: undefined,
+        y: undefined,
+      }
+      window.addEventListener('mousemove', event => {
+        this.mouse.x = event.x;
+        this.mouse.y = event.y;
+        console.log(this.mouse.x, this.mouse.y);
+      });
     }
     init(context) {
       context.drawImage(this.image, this.x, this.y);

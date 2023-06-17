@@ -21,16 +21,20 @@ img {
 }
 
 button {
+    position: absolute;
     padding: 10px;
     font-size: 40px;
     margin: 20xp;
     font-family: 'Bangers', cursive;
     color: grey;
     background-color: rgb(33, 33, 33);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
     transform: 0.2s;
 }
 
 button:hover {
     color: rgb(33, 33, 33);
-    background-color: grey;
+    background-color: rgb(101, 89, 116);
 }
