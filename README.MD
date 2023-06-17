@@ -1,4 +1,4 @@
-### Link to check up:
+# Link to check up:
 https://leonzuev.github.io/particlePicture/
 
 ## Description:
@@ -8,12 +8,12 @@ and interact based on the user's mouse movements.
 The particles are rendered using the 2D rendering context of the canvas element.
 
 ## Main components:
-# Particle class:
+### Particle class:
 Represents individual particles in the effect.
 Each particle has properties such as position, color, size, velocity, and force.
 The particles are drawn on the canvas and updated based on the user's mouse interactions.
 
-# Effect class:
+### Effect class:
 Represents the overall particle effect on the canvas.
 It initializes the effect by loading an image onto the canvas and creating an array
 of particles based on the image's pixels. The effect continuously updates and draws
