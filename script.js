@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
       this.effect = effect;
       this.x = Math.random() * this.effect.width;
       this.y = Math.random() * this.effect.height;
-      this.size = 100;
+      this.size = Math.random() * 50;
     }
     draw(context) {
       context.fillRect(this.x, this.y, this.size, this.size);
@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
       this.y = this.centerY - this.image.height * 0.5;
     }
     init() {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 100; i++) {
         this.particlesArray.push(new Particle(this));
       }
     }
