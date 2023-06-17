@@ -1,1 +1,1 @@
-leonzuev.github.io/particlePicture
+https://leonzuev.github.io/particlePicture/
