@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
     draw(context) {
       context.fillRect(this.x, this.y, this.size, this.size);
     }
-    update(){
+    update() {
       this.x += this.velocityX;
       this.y += this.velocityY;
     }
@@ -43,17 +43,19 @@ window.addEventListener('load', function () {
       this.particlesArray.forEach(particle => particle.draw(context));
       context.drawImage(this.image, this.x, this.y);
     }
-    update(){
+    update() {
       this.particlesArray.forEach(particle => particle.update());
     }
   }
 
   const effect = new Effect(canvas.width, canvas.height);
   effect.init();
-  effect.draw(ctx);
-  effect.update();
 
   function animate() {
-
+    effect.draw(ctx);
+    effect.update();
+    requestAnimationFrame(animate);
   }
+  animate();
+ 
 });
