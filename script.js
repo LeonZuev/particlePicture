@@ -50,7 +50,7 @@ window.addEventListener('load', function () {
           const alpha = pixels[index + 3];
           const color = 'rgb('+ red + ',' + green + ',' + blue + ')';
 
-          if (alfa > 0) {
+          if (alpha > 0) {
             this.particlesArray.push(new Particle(this, x, y, color));
           }
         }
@@ -66,6 +66,7 @@ window.addEventListener('load', function () {
 
   const effect = new Effect(canvas.width, canvas.height);
   effect.init(ctx);
+  console.log(effect);
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
