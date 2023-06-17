@@ -7,17 +7,18 @@ window.addEventListener('load', function () {
   class Particle {
     constructor(effect, x, y, color) {
       this.effect = effect;
-      this.x = Math.random() * this.effect.width;
-      this.y = Math.random() * this.effect.height;
+      this.x = x;
+      this.y = y;
       this.originX = Math.floor(x);
       this.originY = Math.floor(y);
       this.color = color;
       this.size = 10;
-      this.velocityX = Math.random() * 2 - 1;
-      this.velocityY = Math.random() * 2 - 1;
+      this.velocityX = 0;
+      this.velocityY = 0;
 
     }
     draw(context) {
+      context.fillStyle = this.color;
       context.fillRect(this.x, this.y, this.size, this.size);
     }
     update() {
@@ -74,6 +75,6 @@ window.addEventListener('load', function () {
     effect.update();
     requestAnimationFrame(animate);
   }
-  //animate();
+  animate();
 
 });
