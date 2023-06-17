@@ -16,6 +16,11 @@ window.addEventListener('load', function () {
       this.velocityX = 0;
       this.velocityY = 0;
       this.ease = 0.01;
+      this.distanceX = 0;
+      this.distanceY = 0;
+      this.distance = 0;
+      this.force = 0;
+      this.angle = 0;
 
     }
     draw(context) {
@@ -23,8 +28,19 @@ window.addEventListener('load', function () {
       context.fillRect(this.x, this.y, this.size, this.size);
     }
     update() {
-      this.x += (this.originX - this.x) * this.ease;
-      this.y += (this.originY - this.y) * this.ease;
+      this.distanceX = this.effect.mouse.x - this.x;
+      this.distanceY = this.effect.mouse.y - this.y;
+      this.distance = this.distanceX * this.distanceX + this.distanceY + this.distanceY;
+      this.force = -this.effect.mouse.radius / this.distance;
+
+      if (this.distance < this.effect.mouse.radius) {
+        this.angle = Math.atan2(this.distanceY, this.distanceX);
+        this.velocityX += this.force * Math.cos(this.angle);
+        this.velocityY += this.force * Math.sin(this.angle);
+      }
+
+      this.x += this.velocityX + (this.originX - this.x) * this.ease;
+      this.y += this.velocityY + (this.originY - this.y) * this.ease;
     }
     warp() {
       this.x = Math.random() * this.effect.width;
@@ -52,7 +68,6 @@ window.addEventListener('load', function () {
       window.addEventListener('mousemove', event => {
         this.mouse.x = event.x;
         this.mouse.y = event.y;
-        console.log(this.mouse.x, this.mouse.y);
       });
     }
     init(context) {
@@ -86,7 +101,6 @@ window.addEventListener('load', function () {
 
   const effect = new Effect(canvas.width, canvas.height);
   effect.init(ctx);
-  console.log(effect.particlesArray);
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
